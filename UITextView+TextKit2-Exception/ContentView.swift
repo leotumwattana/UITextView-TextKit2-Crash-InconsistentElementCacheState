@@ -10,10 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TextView()
         }
     }
 }
@@ -22,4 +19,18 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+struct TextView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UITextView {
+        let view = UITextView(usingTextLayoutManager: true)
+        view.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        return view
+    }
+    
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        
+    }
+    
+    typealias UIViewType = UITextView
 }
